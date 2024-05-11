@@ -1,0 +1,141 @@
+{
+  "sections": [
+    {
+      "title": "One Piece",
+      "slug": "onepiece",
+      "description": "One Piece is a Japanese manga series written and illustrated by Eiichiro Oda. It follows the adventures of Monkey D. Luffy and his pirate crew, the Straw Hat Pirates, in search of the legendary One Piece treasure. The series is known for its rich world-building, diverse characters, and epic storytelling.",
+      "info": [
+        {
+          "subtitle": "Plot Summary",
+          "content": "The story begins with the execution of Gol D. Roger, the Pirate King, who reveals that his treasure, the One Piece, is hidden at the end of the Grand Line. This sparks the Great Pirate Era, with countless pirates seeking the treasure. Monkey D. Luffy, a young boy inspired by his idol, Shanks, sets out to become the Pirate King and find the One Piece. Along his journey, Luffy gathers a diverse crew, the Straw Hat Pirates, and they face off against powerful enemies, navigate treacherous seas, and explore mysterious islands.",
+          "bg_image": "https://lh3.googleusercontent.com/gg/ANIJZFEtlPEfSdjIAVheHivoATXfCeURBWZEG6Mktl3_QUctRUfugdHXw1BlsaFOt0YMnffHLsh6JqYfoEHqg6MxH_tilk_QezEY3B7V-yIFOCCUnZmL4gMgRIsLpMq3D8sl-41iQhnYCH5aq7U3OjUeOYq6nIoqnJq3StQBzyl6jKw6wxs-Z74ebfSNGAtiqV7TH9FbGrE6quw_PGPW9-6kpEESL7ZqrG784bW7WZnfjL6gf0nRzM3uHNWdImniY2CcqJY2bQGzj5ZhstYnT_o264cwSWttsIyXYjztXGmlQ3xV61E9nk4tVbO1AjosrXKaI5p1ScZf6ON6U5fQuxGXSJTt"
+        },
+        {
+          "subtitle": "Main Characters",
+          "content": "Monkey D. Luffy, Roronoa Zoro, Nami, Usopp, Sanji, Tony Tony Chopper, Nico Robin, Franky, Brook, Jinbe",
+          "bg_image": "https://lh3.googleusercontent.com/gg/ANIJZFH7iAwdqOfJatjPz_zQcVRYwrcFdAqB36bGDDP7LYFU1wz_exR_PlGVnpG-dRWw59ONgqfwQW6IYjgYyfAaCLMexUuSJjUWlTnlD9-8YfmW8AYaJqRLL37ihgS2IHBUphVC0tzDxxY5WzcnpC_rK_uWtRMoCUf7NbHU8RzfVgfqzBOP84uhcNbeuKmmjNXdUAds7HRKvVvNfaHO9Ve79jkYHQE3zY9TN8C4WBA-Vn_Yl0_43iKcGXf8yN8jxSVzdUygc37W9O0zgnaA8WYGQzIG4dC4v3jv8OmwBnCMHkLXy6Mkz8Bm5EtIsOSb3iG58c1JWDFYJS90tLWgtahwHas"
+        },
+        {
+          "subtitle": "World",
+          "content": "The world of One Piece is composed of several seas and islands, with the Grand Line at its center. Each island has its own unique culture, geography, and inhabitants. Throughout their journey, the Straw Hat Pirates encounter diverse civilizations, ancient ruins, powerful adversaries, and the mysteries of the Void Century.",
+          "bg_image": "https://lh3.googleusercontent.com/gg/ANIJZFEWRl4UgEfs1aDlcAVyEvbSUMjZ5_aPNQ3iT0o0rFxHfH3V1jqkBgnoPfyJgggP0z3SP2sJg6EIeWckOl1Ra37YSx7VXp-rzKGALF4NB_LrdWJzssK7RKYJc0RWzuNLo8wPq3mvPJj_8g-EhvxzCZViIA92wEPBDxSXHoU75ZKCSkqGFLd293s3vDU01VLshkHTH_NBCyrK0n_YZDlxhoqLuxuxs0JRY06Y94e2nTcoG-txp8ALJ3uNh-tIrl_35bSx4Qo5YCAxCRj-1Mb7Z395Xp60AOCTOIYw6bZ6qeR8sw_s4tpEYUKvs5Cb-Z_gZliSqHOCPraYRj9azXT02bo"
+        },
+        {
+          "subtitle": "Devil Fruits",
+          "content": "Devil Fruits are mysterious fruits that grant the consumer unique abilities but also render them unable to swim. There are three types: Paramecia, Zoan, and Logia. Devil Fruits play a significant role in battles, exploration, and world-building.",
+          "bg_image": "https://lh3.googleusercontent.com/gg/ANIJZFFeS6dlG0Yz2mNDGg8eNNlUWQVsBmnnvfQcF6PKquWaDch8rv1DMI7Mz9JoV9OG_d3F08cSZsnUY2ko3bT27rFs3t1Ex2NG-OYSpxIMzpEHjlkyTceywQ4edVFHrPuoPx-pnMSlWR5CmYxf0tAK490tN_biBRj5_IvYPAqvhwT7ttHpkv0gOEyIk73Z0x-3Uj9YP6_pxKVUj95aB4Rbz8c7k4r4zGFlrXqn-gxhRfKEQPKy40UzE3xi1fFZn8RJ02Dzs-I_ooEJl2hFRt0vXU7N5g2Q5b1Tfaa_dh486OHvKK1l1QjooGItZOH-W-D1UtY2OFGYDoIE5VOFBnHojF5R"
+        },
+        {
+          "subtitle": "Haki",
+          "content": "Haki is a mysterious power that exists within every living being in the One Piece world. There are three types: Observation Haki, Armament Haki, and Conqueror's Haki. Haki is a crucial element in battles between powerful characters.",
+          "bg_image": "https://lh3.googleusercontent.com/gg/ANIJZFEBN0yNnY4yjAIFHxh0MoheOXatagCLTuSN_YCztG2SKkmidiDa1TuhLr2r686F_aHe8iZJP4OFb2ZkvQfW9oHXDJKPoTy9110WLfb7KJHrx0UY2mzM_eOAj3V2pTaKjkC8V_x8rdoU7FpTVxgCe6C0PIDei2LFZFVtP2C6HKozj0LC4jnrk-o3E6DJeWpsRN7nsEiaLbhVCGNSgFTEcwTZbaeKPu9OmwxtgX04-o3NN-u5srxlDzu-ehIq1MIUDx7ikhm9Gw-SEs7JGQvVcULlpj1Gkmx8eLXADE0pTcu6IN1cfg8-EX8xEvQF1opgab4TfsG132sluFbHE4WdZvvI"
+        },
+        {
+          "subtitle": "The Straw Hat Pirates",
+          "content": "The Straw Hat Pirates are led by Monkey D. Luffy. Known for their unconventional methods and unwavering loyalty, each member brings their own unique skills to the crew, making them a formidable force on the seas.",
+          "bg_image": "https://lh3.googleusercontent.com/gg/ANIJZFEoXb0gEHWG2vHP1ZVUTBwTYs_IhowRHPanqwU1IoUBb0LtTqo6NAEkbNLi78WiSbkUgJhBZED1VDu8uOKjIWd8zwi2IluPWPpc8iotpZi6rZvb6fpMeWlbS3RdjzI-wor8EZedYi9xynPtOn5ErqVfXBOdKd1uzq2BpkFBGW1Vgab6AXPOYw0O9tzZA96SDCtuWDQbmad4Hg4tYx0QkfKddYvjD5a8dfE-SbyvLl8eJm4_9FoprEZCTYRmpLcBBTTQQX4oIf3qxS6nOkHTX4Sh9mVPcWTAfSJJCWOoc2_xBpXiaDBzf3w89P7noVOf1wJan9HMncmmTN1IIoxU3x8"
+        },
+        {
+          "subtitle": "The Great Pirate Era",
+          "content": "The Great Pirate Era follows the execution of Gol D. Roger and the revelation of the One Piece treasure. It is marked by epic battles, legendary pirates, and the rise of new powers seeking dominance over the seas.",
+          "bg_image": "https://lh3.googleusercontent.com/gg/ANIJZFFTHSOP5y1Y-Ej4k-i_1xkciZ6xO32cKOiocKkLcryB43Vpfra2RZj5uCCTUkj3946ONpg7OIE86Xk7o4zWdfureBQI-9DBJVwLWuoMfjmbPic_8mDhc1O1XZX_fhfMfVz8_d1MS1gKW-7PU9HsSOjMg6XX2QzCDmjYO5snk4_sQo1Sfmtq3-HzwXitSE-Jv0Croi_JWE98L08j3CVnFQQ6fFUi_9isg4hYa1z7B-jvFmaNIGEhGLjYaOFy0s0zQgS2A6cI7kFZcbVpi7vdgFdXMfl-RgudNBqfYtTT5GBzxMylQjHtrg021WXu1nVsaPlfbLchCEhn97B6cM_-mcLa"
+        }
+      ]
+    },
+    {
+      "title": "World Building",
+      "slug": "worldbuilding",
+      "description": "Explore the richly detailed world of One Piece, from its diverse landscapes to its colorful characters and cultures.",
+      "info": [
+        {
+          "subtitle": "Geography",
+          "content": "The world of One Piece consists of several seas, including the East Blue, West Blue, North Blue, South Blue, and the Grand Line. The Grand Line is divided into two halves by the Red Line and is known for its treacherous weather and powerful creatures."
+        },
+        {
+          "subtitle": "Cultures",
+          "content": "Each island in the One Piece world has its own unique culture, customs, and traditions. From the peaceful villages of the East Blue to the bustling cities of the New World, diversity is a key theme."
+        },
+        {
+          "subtitle": "History",
+          "content": "The history of the One Piece world is shrouded in mystery and intrigue. Ancient civilizations, legendary figures, and long-forgotten secrets play a significant role in shaping the present."
+        }
+      ]
+    },
+    {
+      "title": "Power System",
+      "slug": "powersystem",
+      "description": "Learn about the various powers and abilities in the One Piece universe, including Devil Fruits, Haki, and more.",
+      "info": [
+        {
+          "subtitle": "Devil Fruits",
+          "content": "Devil Fruits are mysterious fruits that grant the consumer extraordinary powers at the cost of their ability to swim. There are three main types of Devil Fruits: Paramecia, Zoan, and Logia."
+        },
+        {
+          "subtitle": "Haki",
+          "content": "Haki is a mysterious power that allows its user to manifest their spiritual energy in various forms. There are three types of Haki: Observation Haki, Armament Haki, and Conqueror's Haki."
+        },
+        {
+          "subtitle": "Other Abilities",
+          "content": "In addition to Devil Fruits and Haki, there are numerous other abilities and techniques in the One Piece world, including martial arts styles, weapons mastery, and unique skills."
+        }
+      ]
+    },
+    {
+      "title": "Power Hierarchy",
+      "slug": "powerhirarchy",
+      "description": "Discover the intricate power structure within the One Piece universe, from pirate crews to government agencies and beyond.",
+      "info": [
+        {
+          "subtitle": "Pirate Crews",
+          "content": "Pirate crews are the primary factions in the world of One Piece. They range from small, independent crews to powerful, infamous groups known as the Four Emperors."
+        },
+        {
+          "subtitle": "Government",
+          "content": "The World Government is the ruling authority in the One Piece world, with its headquarters located in the holy land of Mariejois. It enforces its rule through the Marines, the Cipher Pol agencies, and the Seven Warlords of the Sea."
+        },
+        {
+          "subtitle": "Other Factions",
+          "content": "In addition to pirates and the government, there are various other factions in the One Piece world, including revolutionary armies, underworld organizations, and ancient civilizations."
+        }
+      ]
+    },
+    {
+      "title": "Arcs",
+      "slug": "arcs",
+      "description": "Explore the different story arcs in the One Piece series, from the East Blue Saga to the current Wano Arc.",
+      "info": [
+        {
+          "subtitle": "East Blue Saga",
+          "content": "The East Blue Saga is the first saga of One Piece and follows the journey of Monkey D. Luffy as he gathers his crew and sets sail on the Grand Line."
+        },
+        {
+          "subtitle": "Alabasta Saga",
+          "content": "The Alabasta Saga follows the Straw Hat Pirates as they journey to the desert kingdom of Alabasta to stop the tyrant Crocodile and save the country from civil war."
+        },
+        {
+          "subtitle": "Wano Arc",
+          "content": "The Wano Arc is the current arc of One Piece and takes place in the isolated country of Wano. It follows the Straw Hat Pirates as they ally with the Wano samurai to take down the tyrannical ruler Kaido."
+        }
+      ]
+    },
+    {
+      "title": "Filler Episodes",
+      "slug": "filler",
+      "description": "Find information about filler episodes in the One Piece anime, including their significance and impact on the overall story.",
+      "info": [
+        {
+          "subtitle": "Definition",
+          "content": "Filler episodes are episodes in an anime series that are not based on the original manga source material. They are often used to give the manga time to progress or to extend the length of the anime."
+        },
+        {
+          "subtitle": "Significance",
+          "content": "While filler episodes may not contribute directly to the main story, they can provide additional character development, world-building, or comedic relief."
+        },
+        {
+          "subtitle": "Impact",
+          "content": "Filler episodes can sometimes disrupt the pacing of the anime or feel disconnected from the main storyline. However, they can also be enjoyable and entertaining for fans."
+        }
+      ]
+    }
+  ]
+}
