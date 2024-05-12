@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 import { Row, Col, Typography, Input, Card } from "antd";
-import data from "../../data/charecters_data.json";
-import "./Charecters.css";
+import data from "../../data/characters_data.json";
+import "./Characters.css";
 import { SearchOutlined } from "@ant-design/icons";
 
-const Charecters = () => {
+const Characters = () => {
   const { Title } = Typography;
   const [searchTerm, setSearchTerm] = useState("");
 
@@ -131,4 +131,4 @@ const Charecters = () => {
   );
 };
 
-export default Charecters;
+export default Characters;

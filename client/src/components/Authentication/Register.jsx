@@ -13,17 +13,16 @@ const Register = () => {
         username: username,
         password: password,
       });
-      console.log(
-        `Username: ${username}, Password: ${password}, Registration successfull`
-      );
+      alert("Registration Success!");
     } catch (error) {
+      alert("Registration Failed!");
       console.log("Error in registration", error);
     }
   }
 
   return (
     <div className="register">
-      <h1>Hello ne w user!</h1>
+      <h1>Hello user!</h1>
       <form onSubmit={register}>
         <input
           type="text"

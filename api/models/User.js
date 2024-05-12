@@ -7,6 +7,11 @@ const UserSchema = new Schema({
   password: { type: String, required: true },
 });
 
-const UserModel = model("User", UserSchema);
+/* In summary, const UserModel = model("User", UserSchema);
+ compiles the UserSchema into a Mongoose model named "User"
+ and assigns it to the variable UserModel, which can then
+ be used to interact with the corresponding MongoDB collection.
+*/
 
+const UserModel = model("User", UserSchema);
 export default UserModel;

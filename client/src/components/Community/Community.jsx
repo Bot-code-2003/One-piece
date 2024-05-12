@@ -1,25 +1,14 @@
 import React from "react";
-import Post from "./Post";
 import { Card } from "antd";
+import Posts from "./Posts";
 
 const Community = () => {
   return (
-    <div>
+    <>
       <Card className="posts-container">
-        <Post />
-        <Post />
-        <Post />
-        <Post />
-        <Post />
-        <Post />
-        <Post />
-        <Post />
-        <Post />
-        <Post />
-        <Post />
-        <Post />
+        <Posts />
       </Card>
-    </div>
+    </>
   );
 };
 
