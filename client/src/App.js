@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { Routes, Route } from "react-router-dom";
 import PreLoader from "./components/PreLoader";
 import HomePage from "./components/Homepage/HomePage";
@@ -8,30 +8,41 @@ import Register from "./components/Authentication/Register";
 import Community from "./components/Community/Community";
 import Login from "./components/Authentication/Login";
 import { useMediaQuery } from "react-responsive";
-import "./App.css";
 import Burger from "./components/Burger";
 import CreatePost from "./components/Community/CreatePost";
-import { UserContextProvider } from "./UserContext";
+import Message from "./components/Community/Message";
+import { UserContext } from "./UserContext";
+import axios from "axios";
+import "./App.css";
 
 const App = () => {
   const isSmallDevice = useMediaQuery({ maxWidth: 767.98 });
+  const { userInfo } = useContext(UserContext);
+
+  //Log the userInfo
+  useEffect(() => {
+    console.log(userInfo);
+  }, [userInfo]);
+
   return (
-    <UserContextProvider>
-      <div className="App">
-        <PreLoader />
-        {isSmallDevice ? <Burger /> : <Navbar />}
-        <div className="pages">
-          <Routes>
-            <Route path="/Characters" exact element={<Characters />} />
-            <Route path="/community" exact element={<Community />} />
-            <Route path="/register" exact element={<Register />} />
-            <Route path="/login" exact element={<Login />} />
-            <Route path="/" exact element={<HomePage />} />
-            <Route path="/create" exact element={<CreatePost />} />
-          </Routes>
-        </div>
+    <div className="App">
+      <PreLoader />
+      {isSmallDevice ? <Burger /> : <Navbar />}
+      <div className="pages">
+        <Routes>
+          <Route path="/Characters" element={<Characters />} />
+          <Route path="/community" element={<Community />} />
+          <Route path="/register" element={<Register />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/" element={<HomePage />} />
+          <Route
+            path="/create"
+            // Conditional rendering (Only logged in users can access)
+            element={userInfo?.username ? <CreatePost /> : <Message />}
+          />
+        </Routes>
       </div>
-    </UserContextProvider>
+    </div>
   );
 };
 
