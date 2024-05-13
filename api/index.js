@@ -2,6 +2,7 @@ import express from "express";
 import cors from "cors";
 import mongoose from "mongoose";
 import User from "./models/User.js";
+import Post from "./models/Post.js";
 import bcrypt from "bcryptjs";
 import jsonwebtoken from "jsonwebtoken";
 import cookieParser from "cookie-parser";
@@ -37,6 +38,20 @@ app.get("/profile", (req, res) => {
   });
 });
 
+app.get("/post", async (req, res) => {
+  try {
+    const posts = await Post.find();
+    res.json(posts);
+  } catch (e) {
+    console.log("error fetching posts");
+  }
+});
+
+app.get("/post/:id", async (req, res) => {
+  const { id } = req.params;
+  const postDoc = await Post.findById(id);
+  res.json(postDoc);
+});
 ////////////////////////
 /////Post requests///////
 ///////////////////////
@@ -81,6 +96,20 @@ app.post("/login", async (req, res) => {
     }
   } catch (error) {
     res.status(400).json("Error");
+  }
+});
+
+app.post("/post", async (req, res) => {
+  try {
+    const { title, content, username } = req.body;
+    const postDoc = await Post.create({
+      title,
+      content,
+      username,
+    });
+    res.json(postDoc);
+  } catch (e) {
+    console.log("Error serevr side");
   }
 });
 

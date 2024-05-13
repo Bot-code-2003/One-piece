@@ -73,6 +73,7 @@ const HomePage = () => {
                 className="card-container"
               >
                 <Card
+                  key={detail.subtitle}
                   className="home-card-body card"
                   style={{
                     display: "flex",

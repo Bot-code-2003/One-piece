@@ -1,39 +1,38 @@
-import React, { useState, useContext } from "react";
+import React, { useEffect, useState, useContext } from "react";
+import axios from "axios";
 import { Card } from "antd";
 import ReactQuill from "react-quill";
 import "react-quill/dist/quill.snow.css";
-import axios from "axios";
-import { useNavigate } from "react-router-dom";
-import { UserContext } from "../../UserContext";
+import { useParams } from "react-router-dom";
 
-const CreatePost = () => {
-  const { userInfo } = useContext(UserContext);
+const EditPost = () => {
+  const { id } = useParams();
+  const [postInfo, setPostInfo] = useState(null);
   const [title, setTitle] = useState("");
   const [content, setContent] = useState("");
-  const navigate = useNavigate();
-  const username = userInfo?.username;
-  async function createNewPost(e) {
+  function updatePost(e) {
     e.preventDefault();
-    console.log("title: ", title);
-    console.log("content: ", content);
-    try {
-      await axios.post("http://localhost:4000/post", {
-        title: title,
-        content: content,
-        username: username,
-      });
-
-      // Navigate to community page
-      navigate("/community");
-    } catch (e) {
-      console.log(e);
-    }
   }
+  useEffect(() => {
+    const fetchData = async () => {
+      // console.log("Params: ", id);
+      try {
+        const response = await axios.get(`http://localhost:4000/post/${id}`);
+        console.log("Response data: ", response.data);
+        setPostInfo(response.data);
+
+        console.log("postInfo:", postInfo);
+      } catch (e) {
+        console.log("Error postPage client side");
+      }
+    };
+    fetchData();
+  }, []);
   return (
     <div>
       <Card className="posts-container">
         <form
-          onSubmit={createNewPost}
+          onSubmit={updatePost}
           style={{
             display: "flex",
             flexDirection: "column",
@@ -45,7 +44,7 @@ const CreatePost = () => {
           <input
             type="text"
             placeholder="Post Title"
-            value={title}
+            value={postInfo.title}
             onChange={(e) => setTitle(e.target.value)}
             style={{
               minWidth: "90%",
@@ -55,7 +54,7 @@ const CreatePost = () => {
           />
           <ReactQuill
             theme="snow"
-            value={content}
+            value={postInfo.content}
             onChange={(newValue) => setContent(newValue)}
             style={{
               width: "100%",
@@ -72,4 +71,4 @@ const CreatePost = () => {
   );
 };
 
-export default CreatePost;
+export default EditPost;

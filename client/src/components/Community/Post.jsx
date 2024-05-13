@@ -4,14 +4,14 @@ import { CgProfile } from "react-icons/cg";
 import { Link } from "react-router-dom";
 import "./Post.css";
 
-const Post = () => {
+const Post = ({ title, username, time, id }) => {
   const { Title } = Typography;
   return (
     <div>
       <Row style={{ marginBottom: "10px" }}>
         <Col span={24} style={{ display: "flex", justifyContent: "center" }}>
           <Link
-            to={`post/1`}
+            to={`/post/${id}`}
             style={{ textDecoration: "none", minWidth: "100%" }}
           >
             <Card className="post">
@@ -37,7 +37,7 @@ const Post = () => {
                     flexDirection: "column",
                   }}
                 >
-                  <h3>Are Luffy and Joy boy same?</h3>
+                  <h3>{title}</h3>
                 </Col>
                 <Col
                   span={5}
@@ -48,8 +48,8 @@ const Post = () => {
                   }}
                 >
                   <CgProfile />
-                  <p>Deepu</p>
-                  <p>Posted 20 min ago</p>
+                  <p>{username}</p>
+                  <p>{time}</p>
                 </Col>
               </Row>
             </Card>

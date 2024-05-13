@@ -12,7 +12,8 @@ import Burger from "./components/Burger";
 import CreatePost from "./components/Community/CreatePost";
 import Message from "./components/Community/Message";
 import { UserContext } from "./UserContext";
-import axios from "axios";
+import PostPage from "./components/Community/PostPage";
+import EditPost from "./components/Community/EditPost";
 import "./App.css";
 
 const App = () => {
@@ -35,6 +36,8 @@ const App = () => {
           <Route path="/register" element={<Register />} />
           <Route path="/login" element={<Login />} />
           <Route path="/" element={<HomePage />} />
+          <Route path="/post/:id" element={<PostPage />} />
+          <Route path="/edit/:id" element={<EditPost />} />
           <Route
             path="/create"
             // Conditional rendering (Only logged in users can access)
