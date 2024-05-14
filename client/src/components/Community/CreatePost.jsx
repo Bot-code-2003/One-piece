@@ -14,8 +14,8 @@ const CreatePost = () => {
   const username = userInfo?.username;
   async function createNewPost(e) {
     e.preventDefault();
-    console.log("title: ", title);
-    console.log("content: ", content);
+    // console.log("title: ", title);
+    // console.log("content: ", content);
     try {
       await axios.post("http://localhost:4000/post", {
         title: title,
@@ -32,6 +32,9 @@ const CreatePost = () => {
   return (
     <div>
       <Card className="posts-container">
+        <h1 style={{ color: "white" }}>
+          Hey {username}! Post your thoughts here.
+        </h1>
         <form
           onSubmit={createNewPost}
           style={{

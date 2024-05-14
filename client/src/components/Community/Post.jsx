@@ -15,8 +15,8 @@ const Post = ({ title, username, time, id }) => {
             style={{ textDecoration: "none", minWidth: "100%" }}
           >
             <Card className="post">
-              <Row style={{ display: "flex", justifyContent: "center" }}>
-                <Col
+              <Row style={{ display: "flex", justifyContent: "space-evenly" }}>
+                {/* <Col
                   span={5}
                   style={{
                     display: "flex",
@@ -25,9 +25,9 @@ const Post = ({ title, username, time, id }) => {
                     flexDirection: "column",
                   }}
                 >
-                  <p>10 Likes</p>
-                  <p>21 Commented on this post</p>
-                </Col>
+                  <p></p>
+                  <p></p>
+                </Col> */}
                 <Col
                   span={10}
                   style={{

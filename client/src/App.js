@@ -7,14 +7,14 @@ import Characters from "./components/Characters/Characters";
 import Register from "./components/Authentication/Register";
 import Community from "./components/Community/Community";
 import Login from "./components/Authentication/Login";
-import { useMediaQuery } from "react-responsive";
-import Burger from "./components/Burger";
 import CreatePost from "./components/Community/CreatePost";
 import Message from "./components/Community/Message";
-import { UserContext } from "./UserContext";
 import PostPage from "./components/Community/PostPage";
 import EditPost from "./components/Community/EditPost";
+import { UserContext } from "./UserContext";
+import { useMediaQuery } from "react-responsive";
 import "./App.css";
+import ErrorSmallDevice from "./ErrorSmallDevice";
 
 const App = () => {
   const isSmallDevice = useMediaQuery({ maxWidth: 767.98 });
@@ -25,10 +25,14 @@ const App = () => {
     console.log(userInfo);
   }, [userInfo]);
 
+  if (isSmallDevice) {
+    return <ErrorSmallDevice />;
+  }
+
   return (
     <div className="App">
       <PreLoader />
-      {isSmallDevice ? <Burger /> : <Navbar />}
+      <Navbar />
       <div className="pages">
         <Routes>
           <Route path="/Characters" element={<Characters />} />

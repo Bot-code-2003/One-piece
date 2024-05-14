@@ -16,3 +16,27 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+
+.small-device {
+  display: flex;
+  /* justify-content: center; */
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+  background-color: white;
+}
+
+.small-device h1,
+.small-device h3 {
+  text-align: center;
+}
+
+@media only screen and (max-width: 767px) {
+  .body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white !important;
+    background-image: none !important;
+  }
+}

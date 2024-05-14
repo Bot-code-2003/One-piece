@@ -117,4 +117,46 @@ app.post("/logout", (req, res) => {
   res.cookie("token", "").json("Logged out");
 });
 
+////////////////////////
+/////Patch requests///////
+///////////////////////
+app.patch("/post/:id", async (req, res) => {
+  const { id } = req.params; // id is post id
+  const { title, content } = req.body;
+  try {
+    // Find the post by ID
+    const post = await Post.findById(id);
+    if (!post) {
+      return res.status(404).json({ error: "Post not found" });
+    }
+    post.title = title;
+    post.content = content;
+    await post.save();
+    res.json(post);
+  } catch (err) {
+    console.error("Error updating post:", err);
+    res.status(500).json({ error: "Internal server error" });
+  }
+});
+
+////////////////////////
+/////Delete requests///////
+///////////////////////
+app.delete("/post/delete/:id", async (req, res) => {
+  try {
+    const { id } = req.params;
+    const post = await Post.findById(id);
+    if (!post) {
+      return res.status(404).json({ error: "Post not found" });
+    }
+    await post.deleteOne();
+    res.json({ message: "Post deleted successfully" });
+  } catch (error) {
+    console.error("Error deleting post:", error);
+    res
+      .status(500)
+      .json({ error: "Server side error", message: error.message });
+  }
+});
+
 app.listen(4000);

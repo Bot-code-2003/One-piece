@@ -1,6 +1,6 @@
 import React, { useEffect, useState, useContext } from "react";
 import axios from "axios";
-import { useParams, Link } from "react-router-dom";
+import { useParams, Link, useNavigate } from "react-router-dom";
 import { Card } from "antd";
 import Loading from "../Loading";
 import LikeButton from "./LikeButton";
@@ -11,6 +11,7 @@ const PostPage = () => {
   const { userInfo } = useContext(UserContext);
   const { id } = useParams();
   const [postInfo, setPostInfo] = useState(null);
+  const navigate = useNavigate();
   useEffect(() => {
     const fetchData = async () => {
       // console.log("Params: ", id);
@@ -24,6 +25,18 @@ const PostPage = () => {
     };
     fetchData();
   }, []);
+
+  // Send request to delete the post
+  async function handleDelete(e) {
+    // console.log("delete clicked");
+    e.preventDefault();
+    try {
+      await axios.delete(`http://localhost:4000/post/delete/${id}`);
+      navigate("/community");
+    } catch (e) {
+      console.log("Client side delete error handleDelete()");
+    }
+  }
   if (!postInfo)
     return (
       <>
@@ -36,13 +49,32 @@ const PostPage = () => {
         display: "flex",
         flexDirection: "column",
         alignItems: "flex-end",
+        minWidth: "100%",
       }}
     >
-      {userInfo.username === postInfo.username && (
-        <Link className="edit-btn" to={`/edit/${postInfo._id}`}>
-          Edit Post
+      <div style={{ marginBlock: "20px" }}>
+        <Link className="edit-btn" to={`/community`}>
+          Back
         </Link>
-      )}
+
+        {/* Authorised user edit capability */}
+        {userInfo.username === postInfo.username && (
+          <Link className="edit-btn" to={`/edit/${postInfo._id}`}>
+            Edit Post
+          </Link>
+        )}
+
+        {/* Authorised user delete capability */}
+        {userInfo.username === postInfo.username && (
+          <Link
+            className="edit-btn"
+            style={{ backgroundColor: "red", border: "1px solid white" }}
+            onClick={handleDelete}
+          >
+            Delete
+          </Link>
+        )}
+      </div>
       <Card className="post Post">
         <div
           style={{
@@ -51,16 +83,19 @@ const PostPage = () => {
             justifyContent: "space-evenly",
           }}
         >
+          {/* Title */}
           <h1 style={{ color: "white" }}>{postInfo.title}</h1>
-          <div>
-            <p style={{ fontStyle: "italic", color: "white" }}>
-              Author: {postInfo.username}
-            </p>
-            <p style={{ fontStyle: "italic", color: "white" }}>
-              Posted at {postInfo.createdAt}
-            </p>
+          <div style={{ display: "flex", gap: "15px" }}>
+            <div>
+              <p style={{ fontStyle: "italic", color: "white" }}>
+                Author: {postInfo.username}
+              </p>
+              <p style={{ fontStyle: "italic", color: "white" }}>
+                Posted at {postInfo.createdAt}
+              </p>
+            </div>
+            <LikeButton />
           </div>
-          <LikeButton />
         </div>
         <div
           className="html-div"

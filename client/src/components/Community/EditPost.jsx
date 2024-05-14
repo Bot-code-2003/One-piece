@@ -3,33 +3,47 @@ import axios from "axios";
 import { Card } from "antd";
 import ReactQuill from "react-quill";
 import "react-quill/dist/quill.snow.css";
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate, Link } from "react-router-dom";
 
 const EditPost = () => {
   const { id } = useParams();
-  const [postInfo, setPostInfo] = useState(null);
   const [title, setTitle] = useState("");
   const [content, setContent] = useState("");
-  function updatePost(e) {
+  const navigate = useNavigate();
+  //On submit
+  async function updatePost(e) {
     e.preventDefault();
+    try {
+      await axios.patch(`http://localhost:4000/post/${id}`, {
+        title: title,
+        content: content,
+      });
+      navigate("/community");
+    } catch (e) {
+      console.log("updatePost function error");
+    }
   }
   useEffect(() => {
     const fetchData = async () => {
-      // console.log("Params: ", id);
+      // console.log("Params: ", id); ->post id
       try {
         const response = await axios.get(`http://localhost:4000/post/${id}`);
         console.log("Response data: ", response.data);
-        setPostInfo(response.data);
-
-        console.log("postInfo:", postInfo);
+        setTitle(response.data.title);
+        setContent(response.data.content);
       } catch (e) {
-        console.log("Error postPage client side");
+        console.log("Error EditpostPage client side");
       }
     };
     fetchData();
   }, []);
   return (
     <div>
+      <div style={{ marginBlock: "20px" }}>
+        <Link className="edit-btn" to={`/post/${id}`}>
+          Back
+        </Link>
+      </div>
       <Card className="posts-container">
         <form
           onSubmit={updatePost}
@@ -44,7 +58,7 @@ const EditPost = () => {
           <input
             type="text"
             placeholder="Post Title"
-            value={postInfo.title}
+            value={title}
             onChange={(e) => setTitle(e.target.value)}
             style={{
               minWidth: "90%",
@@ -54,7 +68,7 @@ const EditPost = () => {
           />
           <ReactQuill
             theme="snow"
-            value={postInfo.content}
+            value={content}
             onChange={(newValue) => setContent(newValue)}
             style={{
               width: "100%",
