@@ -101,11 +101,12 @@ app.post("/login", async (req, res) => {
 
 app.post("/post", async (req, res) => {
   try {
-    const { title, content, username } = req.body;
+    const { title, content, username, likes } = req.body;
     const postDoc = await Post.create({
       title,
       content,
       username,
+      likes,
     });
     res.json(postDoc);
   } catch (e) {
@@ -131,8 +132,27 @@ app.patch("/post/:id", async (req, res) => {
     }
     post.title = title;
     post.content = content;
+
     await post.save();
     res.json(post);
+  } catch (err) {
+    console.error("Error updating post:", err);
+    res.status(500).json({ error: "Internal server error" });
+  }
+});
+
+app.patch("/post/:id/like", async (req, res) => {
+  const { id } = req.params;
+  const { increment } = req.body;
+  try {
+    const post = await Post.findById(id);
+    if (!post) {
+      return res.status(404).json({ error: "Post not found" });
+    }
+    post.likes += increment ? 1 : -1;
+
+    await post.save();
+    res.json({ likes: post.likes });
   } catch (err) {
     console.error("Error updating post:", err);
     res.status(500).json({ error: "Internal server error" });

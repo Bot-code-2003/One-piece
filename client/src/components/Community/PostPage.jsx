@@ -18,7 +18,7 @@ const PostPage = () => {
       try {
         const response = await axios.get(`http://localhost:4000/post/${id}`);
         setPostInfo(response.data);
-        // console.log(response.data);
+        console.log("Post likes: ", postInfo.likes);
       } catch (e) {
         console.log("Error postPage client side");
       }
@@ -43,6 +43,8 @@ const PostPage = () => {
         <Loading />
       </>
     );
+
+  const Post_likes = postInfo.likes;
   return (
     <div
       style={{
@@ -94,7 +96,12 @@ const PostPage = () => {
                 Posted at {postInfo.createdAt}
               </p>
             </div>
-            <LikeButton />
+            <LikeButton
+              UserInfo={userInfo.username}
+              Post_id={id}
+              Post_likes={postInfo.likes}
+              Post_author={postInfo.username}
+            />
           </div>
         </div>
         <div
