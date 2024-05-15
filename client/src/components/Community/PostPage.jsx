@@ -20,7 +20,7 @@ const PostPage = () => {
         setPostInfo(response.data);
         console.log("Post likes: ", postInfo.likes);
       } catch (e) {
-        console.log("Error postPage client side");
+        console.log("Error postPage client side fetching PostInfo");
       }
     };
     fetchData();
@@ -44,7 +44,6 @@ const PostPage = () => {
       </>
     );
 
-  const Post_likes = postInfo.likes;
   return (
     <div
       style={{
@@ -101,6 +100,7 @@ const PostPage = () => {
               Post_id={id}
               Post_likes={postInfo.likes}
               Post_author={postInfo.username}
+              Post_alreadyLiked={postInfo.alreadyLiked}
             />
           </div>
         </div>

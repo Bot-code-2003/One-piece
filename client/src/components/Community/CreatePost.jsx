@@ -22,6 +22,7 @@ const CreatePost = () => {
         content: content,
         username: username,
         likes: 0,
+        alreadyLiked: "false",
       });
 
       // Navigate to community page

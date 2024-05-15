@@ -101,12 +101,14 @@ app.post("/login", async (req, res) => {
 
 app.post("/post", async (req, res) => {
   try {
-    const { title, content, username, likes } = req.body;
+    console.log("Req body: ", req.body)
+    const { title, content, username, likes, alreadyLiked } = req.body;
     const postDoc = await Post.create({
       title,
       content,
       username,
       likes,
+      alreadyLiked
     });
     res.json(postDoc);
   } catch (e) {
@@ -143,13 +145,22 @@ app.patch("/post/:id", async (req, res) => {
 
 app.patch("/post/:id/like", async (req, res) => {
   const { id } = req.params;
-  const { increment } = req.body;
+  const { increment, postAlreadyLiked } = req.body;
   try {
     const post = await Post.findById(id);
     if (!post) {
       return res.status(404).json({ error: "Post not found" });
     }
-    post.likes += increment ? 1 : -1;
+
+    // Check if the user has already liked the post
+    if (!postAlreadyLiked) { //Not postAlreadyLiked = true is what it means.
+      // If user hasn't already liked the post, update the likes count
+      post.likes += increment ? 1 : -1;
+      post.alreadyLiked = true; // Set alreadyLiked to true
+    } else {
+      // If user has already liked the post, return a message or handle it accordingly
+      console.log("You already liked this post");
+    }
 
     await post.save();
     res.json({ likes: post.likes });
@@ -158,6 +169,8 @@ app.patch("/post/:id/like", async (req, res) => {
     res.status(500).json({ error: "Internal server error" });
   }
 });
+
+
 
 ////////////////////////
 /////Delete requests///////

@@ -1,9 +1,10 @@
 import axios from "axios";
 import React, { useState, useEffect } from "react";
 
-const LikeButton = ({ Post_likes, Post_id, UserInfo }) => {
+const LikeButton = ({ Post_likes, Post_id, UserInfo, Post_alreadyLiked }) => {
   const [likes, setLikes] = useState(Post_likes);
   const [isClicked, setIsClicked] = useState(false);
+  const [alreadyLiked, setAlreadyLiked] = useState(Post_alreadyLiked)
 
   useEffect(() => {
     const fetchInitialLikeState = async () => {
@@ -26,6 +27,7 @@ const LikeButton = ({ Post_likes, Post_id, UserInfo }) => {
   }, [Post_id, UserInfo]);
 
   const handleClick = async () => {
+    if (!alreadyLiked){
     try {
       const response = await axios.patch(
         `http://localhost:4000/post/${Post_id}/like`,
@@ -41,6 +43,9 @@ const LikeButton = ({ Post_likes, Post_id, UserInfo }) => {
     } catch (e) {
       console.log("Error client side like button", e);
     }
+  }else{
+    alert("Already Liked")
+  }
   };
 
   const handleNotLoggedinClick = () => {

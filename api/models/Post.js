@@ -8,6 +8,7 @@ const PostSchema = new Schema(
     content: { type: String },
     username: { type: String },
     likes: { type: Number },
+    alreadyLiked: {type: Boolean}
   },
   { timestamps: true }
 );
