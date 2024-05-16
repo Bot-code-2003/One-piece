@@ -15,7 +15,7 @@ const secret = "secret";
 //Middlewares
 app.use(cors({ 
   credentials: true, 
-  origin: "https://one-piece-ashen.vercel.app", 
+  origin: "https://one-piece-blog.vercel.app", 
   methods: ["POST", "GET", "PATCH", "DELETE"] 
 }));
 
