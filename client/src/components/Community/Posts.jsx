@@ -29,6 +29,7 @@ const Posts = () => {
             username={post.username}
             time={post.createdAt}
             id={post._id}
+            likes = {post.likes}
           />
         ))}
     </div>

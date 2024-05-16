@@ -3,8 +3,9 @@ import { Row, Col, Typography, Input, Card } from "antd";
 import { CgProfile } from "react-icons/cg";
 import { Link } from "react-router-dom";
 import "./Post.css";
+import {HeartOutlined} from "@ant-design/icons"
 
-const Post = ({ title, username, time, id }) => {
+const Post = ({ title, username, time, id, likes }) => {
   const { Title } = Typography;
   return (
     <div>
@@ -16,7 +17,7 @@ const Post = ({ title, username, time, id }) => {
           >
             <Card className="post">
               <Row style={{ display: "flex", justifyContent: "space-evenly" }}>
-                {/* <Col
+                <Col
                   span={5}
                   style={{
                     display: "flex",
@@ -25,9 +26,8 @@ const Post = ({ title, username, time, id }) => {
                     flexDirection: "column",
                   }}
                 >
-                  <p></p>
-                  <p></p>
-                </Col> */}
+                  <p><HeartOutlined /> {likes}</p>
+                </Col>
                 <Col
                   span={10}
                   style={{
@@ -44,6 +44,7 @@ const Post = ({ title, username, time, id }) => {
                   style={{
                     display: "flex",
                     alignItems: "center",
+                    justifyContent:"center",
                     flexDirection: "column",
                   }}
                 >

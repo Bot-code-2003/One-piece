@@ -36,6 +36,7 @@ const Register = () => {
           value={password}
           onChange={(e) => setPassword(e.target.value)}
         />
+        <p>Passwords are Hashed! (Enter strong password)</p>
         <button>Register</button>
       </form>
     </div>

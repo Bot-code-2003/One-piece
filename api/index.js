@@ -145,7 +145,7 @@ app.patch("/post/:id", async (req, res) => {
 
 app.patch("/post/:id/like", async (req, res) => {
   const { id } = req.params;
-  const { increment, postAlreadyLiked } = req.body;
+  const { increment } = req.body;
   try {
     const post = await Post.findById(id);
     if (!post) {
@@ -153,14 +153,11 @@ app.patch("/post/:id/like", async (req, res) => {
     }
 
     // Check if the user has already liked the post
-    if (!postAlreadyLiked) { //Not postAlreadyLiked = true is what it means.
+    //Not postAlreadyLiked = true is what it means.
       // If user hasn't already liked the post, update the likes count
       post.likes += increment ? 1 : -1;
-      post.alreadyLiked = true; // Set alreadyLiked to true
-    } else {
-      // If user has already liked the post, return a message or handle it accordingly
-      console.log("You already liked this post");
-    }
+       // Set alreadyLiked to true
+  
 
     await post.save();
     res.json({ likes: post.likes });

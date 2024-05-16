@@ -59,14 +59,14 @@ const PostPage = () => {
         </Link>
 
         {/* Authorised user edit capability */}
-        {userInfo.username === postInfo.username && (
+        {userInfo?.username === postInfo.username && (
           <Link className="edit-btn" to={`/edit/${postInfo._id}`}>
             Edit Post
           </Link>
         )}
 
         {/* Authorised user delete capability */}
-        {userInfo.username === postInfo.username && (
+        {userInfo?.username === postInfo.username && (
           <Link
             className="edit-btn"
             style={{ backgroundColor: "red", border: "1px solid white" }}
@@ -96,7 +96,6 @@ const PostPage = () => {
               </p>
             </div>
             <LikeButton
-              UserInfo={userInfo.username}
               Post_id={id}
               Post_likes={postInfo.likes}
               Post_author={postInfo.username}
