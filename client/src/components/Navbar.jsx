@@ -18,7 +18,7 @@ const Navbar = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get("https://one-piece-api-ten.vercel.app//profile", {
+        const response = await axios.get("https://one-piece-api-ten.vercel.app/profile", {
           withCredentials: true,
         });
         /* response.data:
