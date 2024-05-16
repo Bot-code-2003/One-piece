@@ -18,7 +18,7 @@ const Navbar = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get("https://one-piece-api-snowy.vercel.app/profile", {
+        const response = await axios.get("https://one-piece-api-ten.vercel.app//profile", {
           withCredentials: true,
         });
         /* response.data:
@@ -38,7 +38,7 @@ const Navbar = () => {
   async function logout() {
     try {
       // Clears the token cookie in Server-side
-      await axios.post("https://one-piece-api-snowy.vercel.app/logout", {
+      await axios.post("https://one-piece-api-ten.vercel.app/logout", {
         withCredentials: true,
       });
       setUserInfo(null);

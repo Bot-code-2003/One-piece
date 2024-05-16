@@ -10,7 +10,7 @@ const LikeButton = ({ Post_likes, Post_id, Post_author }) => {
 
     try {
       const response = await axios.patch(
-        `https://one-piece-api-snowy.vercel.app/post/${Post_id}/like`,
+        `https://one-piece-api-ten.vercel.app/post/${Post_id}/like`,
         {
           increment: !isClicked,
           userId: Post_author,

@@ -9,7 +9,7 @@ const Register = () => {
   async function register(e) {
     e.preventDefault();
     try {
-      await axios.post("https://one-piece-api-snowy.vercel.app/register", {
+      await axios.post("https://one-piece-api-ten.vercel.app/register", {
         username: username,
         password: password,
       });

@@ -13,7 +13,7 @@ const Login = () => {
     e.preventDefault();
     try {
       const response = await axios.post(
-        "https://one-piece-api-snowy.vercel.app/login",
+        "https://one-piece-api-ten.vercel.app/login",
         {
           username: username,
           password: password,

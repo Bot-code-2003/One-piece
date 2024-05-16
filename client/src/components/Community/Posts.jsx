@@ -7,7 +7,7 @@ const Posts = () => {
   useEffect(() => {
     const fetchPosts = async () => {
       try {
-        const response = await axios.get("https://one-piece-api-snowy.vercel.app/post");
+        const response = await axios.get("https://one-piece-api-ten.vercel.app/post");
         setPosts(response.data);
         console.log(response.data);
       } catch (error) {

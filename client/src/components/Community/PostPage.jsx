@@ -16,7 +16,7 @@ const PostPage = () => {
     const fetchData = async () => {
       // console.log("Params: ", id);
       try {
-        const response = await axios.get(`one-piece-api-snowy.vercel.app/post/${id}`);
+        const response = await axios.get(`https://one-piece-api-ten.vercel.app/post/${id}`);
         setPostInfo(response.data);
         console.log("Post likes: ", postInfo.likes);
       } catch (e) {
@@ -31,7 +31,7 @@ const PostPage = () => {
     // console.log("delete clicked");
     e.preventDefault();
     try {
-      await axios.delete(`https://one-piece-api-snowy.vercel.app/post/delete/${id}`);
+      await axios.delete(`https://one-piece-api-ten.vercel.app/post/delete/${id}`);
       navigate("/community");
     } catch (e) {
       console.log("Client side delete error handleDelete()");

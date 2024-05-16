@@ -160,12 +160,7 @@ app.patch("/post/:id/like", async (req, res) => {
     if (!post) {
       return res.status(404).json({ error: "Post not found" });
     }
-
-
       post.likes += increment ? 1 : -1;
-
-  
-
     await post.save();
     res.json({ likes: post.likes });
   } catch (err) {
@@ -173,8 +168,6 @@ app.patch("/post/:id/like", async (req, res) => {
     res.status(500).json({ error: "Internal server error" });
   }
 });
-
-
 
 ////////////////////////
 /////Delete requests///////
