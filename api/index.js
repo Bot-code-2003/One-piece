@@ -31,6 +31,10 @@ mongoose.connect(
 /////Get requests///////
 ///////////////////////
 
+app.get("/", (req, res)=>{
+  res.json("Hello");
+})
+
 app.get("/test", (req, res) => {
   res.json("Test ok");
 });
