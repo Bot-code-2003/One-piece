@@ -13,7 +13,7 @@ const salt = bcrypt.genSaltSync(10);
 const secret = "secret";
 
 //Middlewares
-app.use(cors({ credentials: true, origin: "http://localhost:3000" }));
+app.use(cors({ credentials: true, origin: "https://one-piece-ashen.vercel.app/" }));
 app.use(express.json());
 app.use(cookieParser());
 
@@ -152,11 +152,9 @@ app.patch("/post/:id/like", async (req, res) => {
       return res.status(404).json({ error: "Post not found" });
     }
 
-    // Check if the user has already liked the post
-    //Not postAlreadyLiked = true is what it means.
-      // If user hasn't already liked the post, update the likes count
+
       post.likes += increment ? 1 : -1;
-       // Set alreadyLiked to true
+
   
 
     await post.save();

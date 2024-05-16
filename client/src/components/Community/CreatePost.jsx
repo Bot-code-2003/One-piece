@@ -17,7 +17,7 @@ const CreatePost = () => {
     // console.log("title: ", title);
     // console.log("content: ", content);
     try {
-      await axios.post("http://localhost:4000/post", {
+      await axios.post("https://one-piece-api-snowy.vercel.app/post", {
         title: title,
         content: content,
         username: username,

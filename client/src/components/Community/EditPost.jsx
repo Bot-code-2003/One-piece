@@ -14,7 +14,7 @@ const EditPost = () => {
   async function updatePost(e) {
     e.preventDefault();
     try {
-      await axios.patch(`http://localhost:4000/post/${id}`, {
+      await axios.patch(`https://one-piece-api-snowy.vercel.app/post/${id}`, {
         title: title,
         content: content,
       });
@@ -27,7 +27,7 @@ const EditPost = () => {
     const fetchData = async () => {
       // console.log("Params: ", id); ->post id
       try {
-        const response = await axios.get(`http://localhost:4000/post/${id}`);
+        const response = await axios.get(`https://one-piece-api-snowy.vercel.app/post/${id}`);
         console.log("Response data: ", response.data);
         setTitle(response.data.title);
         setContent(response.data.content);
