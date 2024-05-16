@@ -13,7 +13,12 @@ const salt = bcrypt.genSaltSync(10);
 const secret = "secret";
 
 //Middlewares
-app.use(cors({ credentials: true, origin: "https://one-piece-ashen.vercel.app", methods:[POST, GET, PATCH, DELETE] }));
+app.use(cors({ 
+  credentials: true, 
+  origin: "https://one-piece-ashen.vercel.app", 
+  methods: ["POST", "GET", "PATCH", "DELETE"] 
+}));
+
 app.use(express.json());
 app.use(cookieParser());
 
