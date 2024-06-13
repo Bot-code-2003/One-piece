@@ -24,7 +24,7 @@ app.use(cookieParser());
 
 //Db connect
 mongoose.connect(
-  "mongodb+srv://dharmadeepmadisetty:iamdharmathelegend@cluster0.zldooer.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0"
+  "TheLionIsTheKingOfJungle=MermaidsAreReal?/SomeUseRefrigiratorsNotOnlyToStoreFood"
 );
 
 ////////////////////////
